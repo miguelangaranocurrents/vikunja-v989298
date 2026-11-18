@@ -354,6 +354,11 @@ const DRAG_OPTIONS = {
 	dragClass: 'task-dragging',
 	delayOnTouchOnly: true,
 	delay: 1000,
+	// Chrome's native drag autoscroll does not reliably scroll the board container,
+	// so let sortable scroll it whenever the pointer gets near an edge.
+	forceAutoScrollFallback: true,
+	scrollSensitivity: 100,
+	scrollSpeed: 20,
 } as const
 
 const MIN_SCROLL_HEIGHT_PERCENT = 0.25
